@@ -5,20 +5,31 @@ class NightlyCharge():
     def __init__(self, start_time='5:00', bed_time='8:00', end_time='4:00'):
         self.start_time = datetime.strptime(start_time, '%H:%M')
         self.bed_time = datetime.strptime(bed_time, '%H:%M')
+        self.midnight = datetime.strptime('12:00', '%H:%M')
         self.end_time = datetime.strptime(end_time, '%H:%M')
 
     def __str__(self):
         return "Start Time: {}\n  Bed Time: {}\n  End Time: {}".format(self.start_time, self.bed_time, self.end_time)
 
+    def first_time(self):
+        return self.bed_time - self.start_time
+
+    def second_time(self):
+        return self.midnight - self.bed_time
+
+    def third_time(self):
+        return self.end_time - self.midnight
 
 # Start Script
 """
-try:
-    start = datetime.strptime(input('Start Time: '), '%H:%M')
-    bed = datetime.strptime(input('Bed Time: '), '%H:%M')
-    end = datetime.strptime(input('End Time: '), '%H:%M')
-except:
-    print('Please give your time in this format: HH:MM')
+while True:
+    try:
+        start = datetime.strptime(input('Start Time: '), '%H:%M')
+        bed = datetime.strptime(input('Bed Time: '), '%H:%M')
+        end = datetime.strptime(input('End Time: '), '%H:%M')
+        break
+    except:
+        print('Please give your time in this format: HH:MM')
 
 night = NightlyCharge(start, bed, end)
 print(night.charge)

@@ -1,5 +1,5 @@
 import unittest
-from datetime import datetime
+from datetime import datetime, timedelta
 from app.nightly_charge import NightlyCharge
 
 
@@ -7,7 +7,7 @@ class BabysitterCalculatorTest(unittest.TestCase):
     def setUp(self):
         self.nightly = NightlyCharge()
 
-    def test_time_checker(self):
-        self.assertTrue(datetime.strptime(self.nightly.start_time, '%H:%M'))
-        self.assertTrue(datetime.strptime(self.nightly.bed_time, '%H:%M'))
-        self.assertTrue(datetime.strptime(self.nightly.end_time, '%H:%M'))
+    def test_timedelta_checker(self):
+        self.assertIsInstance(self.nightly.first_time(), timedelta)
+        self.assertIsInstance(self.nightly.second_time(), timedelta)
+        self.assertIsInstance(self.nightly.third_time(), timedelta)
