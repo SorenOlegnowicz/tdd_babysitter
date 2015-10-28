@@ -11,3 +11,8 @@ class BabysitterCalculatorTest(unittest.TestCase):
         self.assertIsInstance(self.nightly.first_time(), timedelta)
         self.assertIsInstance(self.nightly.second_time(), timedelta)
         self.assertIsInstance(self.nightly.third_time(), timedelta)
+
+    def test_timedelta_positive(self):
+        self.assertGreaterEqual(self.nightly.first_time().total_seconds(), 0)
+        self.assertGreaterEqual(self.nightly.second_time().total_seconds(), 0)
+        self.assertGreaterEqual(self.nightly.third_time().total_seconds(), 0)
