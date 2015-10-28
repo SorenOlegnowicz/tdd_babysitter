@@ -16,3 +16,4 @@ class BabysitterCalculatorTest(unittest.TestCase):
         self.assertGreaterEqual(self.nightly.first_time().total_seconds(), 0)
         self.assertGreaterEqual(self.nightly.second_time().total_seconds(), 0)
         self.assertGreaterEqual(self.nightly.third_time().total_seconds(), 0)
+        print(self.nightly.third_time())

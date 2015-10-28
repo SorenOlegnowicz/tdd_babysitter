@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 class NightlyCharge():
@@ -18,7 +18,7 @@ class NightlyCharge():
         return self.midnight - self.bed_time
 
     def third_time(self):
-        return self.end_time - self.midnight
+        return self.end_time - self.midnight + timedelta(hours=12)
 
 # Start Script
 """
