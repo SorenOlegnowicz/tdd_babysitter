@@ -27,6 +27,9 @@ class NightlyCharge():
     def delta_conversion(self, time):
         return (time.total_seconds()) / 3600
 
+    def first_charge(self):
+        pass
+        
 # Start Script
 """
 while True:

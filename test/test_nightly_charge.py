@@ -24,3 +24,8 @@ class BabysitterCalculatorTest(unittest.TestCase):
         self.assertIsInstance(self.nightly.delta_conversion(self.nightly.first_time), float)
         self.assertIsInstance(self.nightly.delta_conversion(self.nightly.second_time), float)
         self.assertIsInstance(self.nightly.delta_conversion(self.nightly.third_time), float)
+
+    # Test Four
+    def test_first_charge(self):
+        """Cost: $12 per hour"""
+        self. assertEqual(self.nightly.charge(self.nightly.first_time), (self.nightly.first_time*12))
