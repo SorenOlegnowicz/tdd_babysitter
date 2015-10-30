@@ -2,6 +2,9 @@ from datetime import datetime, timedelta
 
 
 class NightlyCharge():
+    first_pay = 12
+    second_pay = 8
+    third_pay = 16
 
     def __init__(self, start_time='5:00', bed_time='8:00', end_time='4:00'):
         self.start_time = datetime.strptime(start_time, '%H:%M')
@@ -27,9 +30,8 @@ class NightlyCharge():
     def delta_conversion(self, time):
         return (time.total_seconds()) / 3600
 
-    def first_charge(self, time):
-        """Cost: $12 per hour"""
-        return self.delta_conversion(time) * 12
+    def charge(self, time, pay):
+        return self.delta_conversion(time) * pay
 
 # Start Script
 """
