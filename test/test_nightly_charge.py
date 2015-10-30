@@ -7,13 +7,20 @@ class BabysitterCalculatorTest(unittest.TestCase):
     def setUp(self):
         self.nightly = NightlyCharge()
 
+    # Test One
     def test_timedelta_checker(self):
-        self.assertIsInstance(self.nightly.first_time(), timedelta)
-        self.assertIsInstance(self.nightly.second_time(), timedelta)
-        self.assertIsInstance(self.nightly.third_time(), timedelta)
+        self.assertIsInstance(self.nightly.first_timedelta(), timedelta)
+        self.assertIsInstance(self.nightly.second_timedelta(), timedelta)
+        self.assertIsInstance(self.nightly.third_timedelta(), timedelta)
 
+    # Test Two
     def test_timedelta_positive(self):
-        self.assertGreaterEqual(self.nightly.first_time().total_seconds(), 0)
-        self.assertGreaterEqual(self.nightly.second_time().total_seconds(), 0)
-        self.assertGreaterEqual(self.nightly.third_time().total_seconds(), 0)
-        print(self.nightly.third_time())
+        self.assertGreaterEqual(self.nightly.first_timedelta().total_seconds(), 0)
+        self.assertGreaterEqual(self.nightly.second_timedelta().total_seconds(), 0)
+        self.assertGreaterEqual(self.nightly.third_timedelta().total_seconds(), 0)
+
+    # Test Three
+    def test_delta_conversion(self):
+        self.assertIsInstance(self.nightly.delta_conversion(self.nightly.first_time), float)
+        self.assertIsInstance(self.nightly.delta_conversion(self.nightly.second_time), float)
+        self.assertIsInstance(self.nightly.delta_conversion(self.nightly.third_time), float)
