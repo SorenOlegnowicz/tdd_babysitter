@@ -28,4 +28,5 @@ class BabysitterCalculatorTest(unittest.TestCase):
     # Test Four
     def test_first_charge(self):
         """Cost: $12 per hour"""
-        self. assertEqual(self.nightly.first_charge(self.nightly.first_time), (self.nightly.first_time*12))
+        self. assertEqual(self.nightly.first_charge(self.nightly.first_time), (self.nightly.delta_conversion(self.nightly.first_time) * 12))
+        

@@ -28,6 +28,7 @@ class NightlyCharge():
         return (time.total_seconds()) / 3600
 
     def first_charge(self, time):
+        """Cost: $12 per hour"""
         return self.delta_conversion(time) * 12
 
 # Start Script
