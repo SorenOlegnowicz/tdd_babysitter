@@ -30,3 +30,7 @@ class BabysitterCalculatorTest(unittest.TestCase):
         self.assertEqual(self.nightly.charge(self.nightly.first_time, self.nightly.first_pay), (self.nightly.delta_conversion(self.nightly.first_time) * 12))
         self.assertEqual(self.nightly.charge(self.nightly.second_time, self.nightly.second_pay), (self.nightly.delta_conversion(self.nightly.second_time) * 8))
         self.assertEqual(self.nightly.charge(self.nightly.third_time, self.nightly.third_pay), (self.nightly.delta_conversion(self.nightly.third_time) * 16))
+
+    # Test Five
+    def test_total_charge(self):
+        self.assertEqual(self.nightly.total_charge(), (3 * 12) + (4 * 8) + (4 * 16))

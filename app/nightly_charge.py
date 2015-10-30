@@ -33,6 +33,9 @@ class NightlyCharge():
     def charge(self, time, pay):
         return self.delta_conversion(time) * pay
 
+    def total_charge(self):
+        return self.charge(self.first_time, self.first_pay) + self.charge(self.second_time, self.second_pay) + self.charge(self.third_time, self.third_pay)
+
 # Start Script
 """
 while True:
@@ -54,3 +57,7 @@ print(type(night.second_time))
 print(night.delta_conversion(night.first_time))
 night.delta_conversion
 print('Delta: {}'.format(night.delta_conversion(night.third_time)))
+print('Total: {}'.format(night.total_charge()))
+print(night.first_time)
+print(night.second_time)
+print(night.third_time)
