@@ -38,26 +38,12 @@ class NightlyCharge():
 
 # Start Script
 """
-while True:
-    try:
-        start = datetime.strptime(input('Start Time: '), '%H:%M')
-        bed = datetime.strptime(input('Bed Time: '), '%H:%M')
-        end = datetime.strptime(input('End Time: '), '%H:%M')
-        break
-    except:
-        print('Please give your time in this format: HH:MM')
+try:
+    start = input('Start Time: ')
+    bed = input('Bed Time: ')
+    end = input('End Time: ')
+except:
+    print('None')
 
 night = NightlyCharge(start, bed, end)
-print(night.charge)
 """
-
-# Debug
-night = NightlyCharge()
-print(type(night.second_time))
-print(night.delta_conversion(night.first_time))
-night.delta_conversion
-print('Delta: {}'.format(night.delta_conversion(night.third_time)))
-print('Total: {}'.format(night.total_charge()))
-print(night.first_time)
-print(night.second_time)
-print(night.third_time)

@@ -6,6 +6,7 @@ from app.nightly_charge import NightlyCharge
 class BabysitterCalculatorTest(unittest.TestCase):
     def setUp(self):
         self.nightly = NightlyCharge()
+        self.midnightly = NightlyCharge('10:00', '1:00', '3:00')
 
     # Test One
     def test_timedelta_checker(self):
