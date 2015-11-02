@@ -28,7 +28,7 @@ class NightlyCharge():
         return self.end_time - self.midnight + timedelta(hours=12)
 
     def delta_conversion(self, time):
-        return (time.total_seconds()) / 3600
+        return (time.total_seconds()) // 3600
 
     def charge(self, time, pay):
         return self.delta_conversion(time) * pay
