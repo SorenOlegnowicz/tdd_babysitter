@@ -7,6 +7,7 @@ class BabysitterCalculatorTest(unittest.TestCase):
     def setUp(self):
         self.nightly = NightlyCharge()
         self.midnightly = NightlyCharge('10:00', '1:00', '3:00')
+        self.round_night = NightlyCharge('5:01')
 
     # Test One
     def test_timedelta_checker(self):
@@ -35,3 +36,9 @@ class BabysitterCalculatorTest(unittest.TestCase):
     # Test Five
     def test_total_charge(self):
         self.assertEqual(self.nightly.total_charge(), (3 * 12) + (4 * 8) + (4 * 16))
+
+    # Test Six
+    def test_for_hour_completion(self):
+        self.assertEqual(self.round_night.total_charge(), (2 * 12) + (4 * 8) + (4 * 16))
+
+    
