@@ -41,4 +41,11 @@ class BabysitterCalculatorTest(unittest.TestCase):
     def test_for_hour_completion(self):
         self.assertEqual(self.round_night.total_charge(), (2 * 12) + (4 * 8) + (4 * 16))
 
-    
+    # Test Seven
+    def test_midnight_queue_primary(self):
+        """If bed time is more important than midnight"""
+        self.assertEqual(self.midnightly.total_charge(), (3 * 12) + (0 * 8) + (2 * 16))
+
+    # def test_midnight_queue_secondary(self):
+    #     """If midnight is more important than bed time"""
+    #     self.assertEqual(self.midnightly.total_charge(), (2 * 12) + (0 * 8) + (3 * 16))
