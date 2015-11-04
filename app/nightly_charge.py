@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from sys import argv
 
 
 class NightlyCharge():
@@ -51,17 +52,20 @@ class NightlyCharge():
         return self.charge(self.first_time, self.first_pay) + self.charge(self.second_time, self.second_pay) + self.charge(self.third_time, self.third_pay)
 
 # Start Script
-"""
-try:
-    start = input('Start Time: ')
-    bed = input('Bed Time: ')
-    end = input('End Time: ')
-except:
-    print('None')
+code = """
+start = input('Start Time: ')
+bed = input('Bed Time: ')
+end = input('End Time: ')
 
 night = NightlyCharge(start, bed, end)
 """
-midnightly = NightlyCharge('10:00', '1:00', '3:00')
-print(midnightly.first_timedelta())
-print(midnightly.second_timedelta())
-print(midnightly.third_timedelta())
+try:
+    option = argv[1]
+except:
+    option = 0
+
+if 'o' in option:
+    exec(code)
+    print('DONE!')
+else:
+    pass
