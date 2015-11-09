@@ -3,7 +3,7 @@ Code Kata: https://gist.github.com/jameskbride/5482722
 
 ### To run the app script from the *app* directory
 Type into the command line:
-```python3 nightly_charge.py```
+```python3 app/nightly_charge.py```
 
 ### To run the tests
 Type into the command line:
